@@ -3,12 +3,13 @@ package training.openshift.dbtest;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
 @RestController
 public class PgDbTestController {
-    private static final Logger = LoggerFactory.getLogger(PgDbTestController.class);
+    private static final Logger log = LoggerFactory.getLogger(PgDbTestController.class);
 
     @GetMapping("/dbtest")
     public String testDb()  {
@@ -18,5 +19,6 @@ public class PgDbTestController {
           log.info("Error",e);
           return e.getMessage();
       }
+      //return "hello world!";
     }
 }
