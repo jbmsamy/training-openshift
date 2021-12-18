@@ -18,7 +18,6 @@ public class PgDbTestController {
       }catch(Exception e) {
           log.info("Error",e);
           return e.getMessage();
-      }
-      //return "hello world!";
+      }    
     }
 }
