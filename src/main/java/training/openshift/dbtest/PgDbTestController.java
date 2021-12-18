@@ -13,11 +13,11 @@ public class PgDbTestController {
 
     @GetMapping("/dbtest")
     public String testDb()  {
-      try(Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/testdb","seyoanapp","aDmin1!")) {
+      try(Connection con = DriverManager.getConnection("jdbc:postgresql://172.30.126.77:5432/testdb","seyoanapp","aDmin1!")) {
         return con==null ? "Failed" : "Success";
       }catch(Exception e) {
           log.info("Error",e);
           return e.getMessage();
-      }    
+      }
     }
 }
